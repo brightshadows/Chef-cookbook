@@ -10,5 +10,8 @@ end
 
 template '/etc/motd' do
   source 'motd.erb'
+  variables(
+    :name => 'Variable_name_Phong'
+  )
   action :create
 end
