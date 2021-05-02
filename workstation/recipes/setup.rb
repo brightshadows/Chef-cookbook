@@ -4,9 +4,11 @@ end
 
 package 'ntp'
 
-file '/etc/motd' do
-	content 'This server is the property of Phong Chef AWS'
-	action :create
-	owner 'root'
-	group 'root'
+package 'git' do
+	action :install
+end
+
+template '/etc/motd' do
+  source 'motd.erb'
+  action :create
 end
